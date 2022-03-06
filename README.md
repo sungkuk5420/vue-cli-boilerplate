@@ -79,8 +79,49 @@ vue create <project name>
 ? Pick a unit testing solution: Jest
 ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
 ? Save this as a preset for future projects? (y/N) n
+```
 
+### prettier
+```
+.prettierrc 파일생성후
+{
+    "singleQuote": true,
+    "semi": true,
+    "useTabs": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
+}
 
+이후 컨트롤+ , 를 눌러 설정 메뉴를 열고 eslint를 검색한다
+
+settings.json
+에서는 
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.workingDirectories": [
+    {"mode": "auto"}
+  ],
+}
+를 추가한다.
+
+이후 Eslint :Probe에서 eslint를 적용할 파일을 찾을 수 있다.
+그리고 아래의 ESLint:Validate에서 설정을 누르고 
+  "eslint.validate":[
+    {
+    "language":"vue",
+    "autoFix":true
+  }]
+
+  이와같이 적용할 파일형식을 지정해줘야한다.
 
 
 ```
+
+### prettier
+이후 중요한게 prettier플러그인을 오른쪽 버튼으로 해당작업영역에서는 끄기로 한다.
+format on save를 설정에서 검색(ctrl + ,)에서 자동저장을 끈다.
